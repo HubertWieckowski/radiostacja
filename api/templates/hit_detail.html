@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Szczegóły Hitu{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card p-4 shadow-sm">
+        <h1 class="text-center">{{ hit.title }}</h1>
+        <p class="text-center text-muted">Wykonawca: <strong>{{ hit.artist.first_name }} {{ hit.artist.last_name }}</strong></p>
+
+        <div class="d-flex justify-content-center mt-3">
+            <a href="{% url 'edit-hit' hit.title_url %}" class="btn btn-warning me-2">Edytuj</a>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Powrót</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

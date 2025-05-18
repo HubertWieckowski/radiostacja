@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Edytuj Hit{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Edytuj Hit</h1>
+
+    <div class="card p-4 shadow-sm">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-success me-2">Zapisz zmiany</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Anuluj</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
